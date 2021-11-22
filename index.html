@@ -6,21 +6,19 @@
   </head>
   <body>
     <h1>Awesome Books</h1>
-    <div class="book-list">
+    <div id="book-list" class="book-list">
       <div class="book">
-        <p>Book title</p>
-        <p>Author name</p>
-        <button type="button" name="remove-book">Remove</button>
-        <hr>
       </div>
     </div>
     <div class="add-book">
       <form class="" action="index.html" method="post">
-        <input type="text" name="" value="" placeholder="Title">
-        <input type="text" name="" value="" placeholder="Author">
-        <button type="submit" name="button">Add</button>
+        <input class="book-title" type="text" name="" value="" placeholder="Title">
+        <input class="book-author"  type="text" name="" value="" placeholder="Author">
+        <button id="add-book" type="submit" name="button">Add</button>
       </form>
 
     </div>
+
+    <script src="collection.js"></script>
   </body>
 </html>

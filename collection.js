@@ -7,7 +7,7 @@ let protoObjet = {
   author: "",
 }
 
-const listBooks = [];
+let listBooks = [];
 
 const displayBooks = (books) => {
   if (books.length == 0) {
@@ -30,7 +30,10 @@ const displayBooks = (books) => {
         </div>
       `
     }
+    
     document.getElementById('book-list').innerHTML = bookString;
+    
+
   }
 }
 
@@ -49,22 +52,35 @@ const addBooky = () => {
     listBooks.push(newBook);
     displayBooks(listBooks);
     console.log(listBooks);
+    removeBook()
   })
+ 
 }
 
-const removeBook = document.getElementById('remove-book')
-//
-// const removeBook = () => {
-//   removeBook.addEventListener('click', () => {
-//     const
-//   })
-// }
+
+
+const removeBook = () => {
+  if(listBooks.length != 0) {
+    const removeBooky = document.querySelector('#remove-book');
+    
+    removeBooky.addEventListener('click', () => {
+      console.log("I'm here!");
+      listBooks = listBooks.filter((book, index) => index == parseInt(removeBooky.getAttribute('data-atr')));
+      console.log(listBooks)
+      displayBooks(listBooks);
+      
+    })
+  }
+}
+
+
 
 
 
 
 window.onload = () => {
   addBooky()
+  
 }
 
 // const addBook = {

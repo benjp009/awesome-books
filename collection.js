@@ -1,10 +1,13 @@
-const bookTitle = document.querySelector('.book-title').value ="";
-const bookAuthor = document.querySelector('.book-author').value ="";
+const bookTitle = document.querySelector('.book-title');
+const bookAuthor = document.querySelector('.book-author');
+const addBook = document.querySelector('#add-book')
+
+let protoObjet
 
 const listBooks = [
   {
-    title: "some book Title",
-    author: "Some Author"
+    title: bookTitle,
+    author: bookAuthor
   },
 ]
 
@@ -31,15 +34,31 @@ if (listBooks[0].title === "" && listBooks[0].author === "") {
   }
 }
 
-const addBook = {
-  title: "some book Title",
-  author: "Some Author"
-};
+const addBooky = () => {
+  addBook.addEventListener('click', () => {
+    let newBook = Object.create(listBooks, {})
+    const bookTitle = document.querySelector('.book-title');
+    const bookAuthor = document.querySelector('.book-author');
+    newBook.title = bookTitle.value,
+    newBook.author = bookAuthor.value
 
-const newCollection = Object.assign(listBooks, addBook);
+    console.log(newBook)
+  })
+}
 
-console.log(listBooks);
-console.log(addBook)
+window.onload = () => {
+  addBooky()
+}
+
+// const addBook = {
+//   title: "some book Title",
+//   author: "Some Author"
+// };
+
+// const newCollection = Object.assign(listBooks, addBook);
+
+// console.log(listBooks);
+// console.log(addBook)
 
 // const employee = Object.create(listBooks,
 //   {

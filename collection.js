@@ -7,12 +7,27 @@ let protoObjet = {
   author: "",
 }
 
-let listBooks = [];
+const removeBook = () => {
+  let listBooks = JSON.parse(localStorage.getItem('BookList') || "[]" );
+  if(listBooks.length > 0) {
+    const removeButtons = document.querySelectorAll('#remove-book');
+    console.log(removeButtons);
+    removeButtons.forEach(removeButton => {
+      removeButton.addEventListener('click', () => {
+        listBooks = listBooks.filter((book, index) => index !== parseInt(removeButton.getAttribute('data-atr')));      
+        localStorage.setItem('BookList', JSON.stringify(listBooks));
+        displayBooks();
+      })
+    });
+  
+  }
+}
 
-const displayBooks = (books) => {
-  if (books.length == 0) {
+const displayBooks = () => {
+  let listBooks = JSON.parse(localStorage.getItem('BookList') || "[]" );
+  if (listBooks.length == 0) {
     console.log("I work");
-    document.getElementById('book-list').innerHTML += `
+    document.getElementById('book-list').innerHTML = `
       <div class="book">
         <p class="no-book">No books</p>
         <hr>
@@ -20,11 +35,11 @@ const displayBooks = (books) => {
     `
   } else {
     let bookString = "";
-    for (let i = 0; i < books.length; i += 1) {
+    for (let i = 0; i < listBooks.length; i += 1) {
       bookString += `
         <div class="book">
-          <p>${books[i].title}</p>
-          <p>${books[i].author}</p>
+          <p>${listBooks[i].title}</p>
+          <p>${listBooks[i].author}</p>
           <button id="remove-book" type="button" data-atr="${i}">Remove</button>
           <hr>
         </div>
@@ -32,13 +47,12 @@ const displayBooks = (books) => {
     }
     
     document.getElementById('book-list').innerHTML = bookString;
-    
-
+    removeBook();
   }
 }
 
 // if (listBooks[{0}].length === 0) {
-displayBooks(listBooks);
+displayBooks();
 
 const addBooky = () => {
   addBook.addEventListener('click', () => {
@@ -49,38 +63,18 @@ const addBooky = () => {
     newBook.author = bookAuthor.value;
 
     // console.log(newBook)
+    let listBooks = JSON.parse(localStorage.getItem('BookList') || "[]" );
     listBooks.push(newBook);
-    displayBooks(listBooks);
+    localStorage.setItem('BookList', JSON.stringify(listBooks));
+    displayBooks();
     console.log(listBooks);
-    removeBook()
-  })
- 
+  });
 }
-
-
-
-const removeBook = () => {
-  if(listBooks.length != 0) {
-    const removeBooky = document.querySelector('#remove-book');
-    
-    removeBooky.addEventListener('click', () => {
-      console.log("I'm here!");
-      listBooks = listBooks.filter((book, index) => index == parseInt(removeBooky.getAttribute('data-atr')));
-      console.log(listBooks)
-      displayBooks(listBooks);
-      
-    })
-  }
-}
-
-
-
 
 
 
 window.onload = () => {
-  addBooky()
-  
+  addBooky();
 }
 
 // const addBook = {

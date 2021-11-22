@@ -1,17 +1,20 @@
-const bookTitle = document.querySelector('.book-title');
-const bookAuthor = document.querySelector('.book-author');
+const bookTitle = document.querySelector('.book-title').value ="";
+const bookAuthor = document.querySelector('.book-author').value ="";
 
 const listBooks = [
   {
-    title: bookTitle,
-    author: bookAuthor
+    title: "some book Title",
+    author: "Some Author"
   },
 ]
 
-if (listBooks.length == 0) {
-  `
+
+// if (listBooks[{0}].length === 0) {
+if (listBooks[0].title === "" && listBooks[0].author === "") {
+  console.log("I work");
+  document.getElementById('book-list').innerHTML += `
     <div class="book">
-      <p>No books</p>
+      <p class="no-book">No books</p>
       <hr>
     </div>
   `
@@ -28,7 +31,15 @@ if (listBooks.length == 0) {
   }
 }
 
+const addBook = {
+  title: "some book Title",
+  author: "Some Author"
+};
 
+const newCollection = Object.assign(listBooks, addBook);
+
+console.log(listBooks);
+console.log(addBook)
 
 // const employee = Object.create(listBooks,
 //   {

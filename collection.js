@@ -4,7 +4,7 @@ const addBook = document.querySelector('#add-book')
 
 let protoObjet = {
   title: "",
-  author: ""
+  author: "",
 }
 
 const listBooks = [];
@@ -25,7 +25,7 @@ const displayBooks = (books) => {
         <div class="book">
           <p>${books[i].title}</p>
           <p>${books[i].author}</p>
-          <button type="button" name="remove-book">Remove</button>
+          <button id="remove-book" type="button" data-atr="${i}">Remove</button>
           <hr>
         </div>
       `
@@ -51,6 +51,15 @@ const addBooky = () => {
     console.log(listBooks);
   })
 }
+
+const removeBook = document.getElementById('remove-book')
+//
+// const removeBook = () => {
+//   removeBook.addEventListener('click', () => {
+//     const
+//   })
+// }
+
 
 
 

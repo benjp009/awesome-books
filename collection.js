@@ -2,49 +2,57 @@ const bookTitle = document.querySelector('.book-title');
 const bookAuthor = document.querySelector('.book-author');
 const addBook = document.querySelector('#add-book')
 
-let protoObjet
+let protoObjet = {
+  title: "",
+  author: ""
+}
 
-const listBooks = [
-  {
-    title: bookTitle,
-    author: bookAuthor
-  },
-]
+const listBooks = [];
 
-
-// if (listBooks[{0}].length === 0) {
-if (listBooks[0].title === "" && listBooks[0].author === "") {
-  console.log("I work");
-  document.getElementById('book-list').innerHTML += `
-    <div class="book">
-      <p class="no-book">No books</p>
-      <hr>
-    </div>
-  `
-} else {
-  for (let i = 0; i < listBooks.length; i += 1) {
+const displayBooks = (books) => {
+  if (books.length == 0) {
+    console.log("I work");
     document.getElementById('book-list').innerHTML += `
       <div class="book">
-        <p>${listBooks[i].title}</p>
-        <p>${listBooks[i].author}</p>
-        <button type="button" name="remove-book">Remove</button>
+        <p class="no-book">No books</p>
         <hr>
       </div>
     `
+  } else {
+    let bookString = "";
+    for (let i = 0; i < books.length; i += 1) {
+      bookString += `
+        <div class="book">
+          <p>${books[i].title}</p>
+          <p>${books[i].author}</p>
+          <button type="button" name="remove-book">Remove</button>
+          <hr>
+        </div>
+      `
+    }
+    document.getElementById('book-list').innerHTML = bookString;
   }
 }
 
+// if (listBooks[{0}].length === 0) {
+displayBooks(listBooks);
+
 const addBooky = () => {
   addBook.addEventListener('click', () => {
-    let newBook = Object.create(listBooks, {})
+    let newBook = Object.create(protoObjet, {})
     const bookTitle = document.querySelector('.book-title');
     const bookAuthor = document.querySelector('.book-author');
-    newBook.title = bookTitle.value,
-    newBook.author = bookAuthor.value
+    newBook.title = bookTitle.value;
+    newBook.author = bookAuthor.value;
 
-    console.log(newBook)
+    // console.log(newBook)
+    listBooks.push(newBook);
+    displayBooks(listBooks);
+    console.log(listBooks);
   })
 }
+
+
 
 window.onload = () => {
   addBooky()

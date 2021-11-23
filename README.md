@@ -19,8 +19,7 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+**Feel free to discover the code and help us improve it**
 
 
 ## Authors
@@ -48,9 +47,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Great team work on the project in Pair Programming
+- Thank you for Microverse for providing the required materials
 
 ## 📝 License
 

@@ -2,15 +2,15 @@ class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
-  };
+  }
 
   addBook() {
-    let book = {
+    const book = {
       title: this.title,
-      author: this.author
-    }
+      author: this.author,
+    };
 
-    let listBooks = JSON.parse(localStorage.getItem('BookList') || '[]');
+    const listBooks = JSON.parse(localStorage.getItem('BookList') || '[]');
     listBooks.push(book);
     localStorage.setItem('BookList', JSON.stringify(listBooks));
   }
@@ -52,21 +52,20 @@ const displayBooks = () => {
       const removeButtons = document.querySelectorAll('#remove-book');
       removeButtons.forEach((removeButton) => {
         removeButton.addEventListener('click', () => {
-          let book = new Book('', '');
+          const book = new Book('', '');
           book.removeBook(removeButton.getAttribute('data-atr'));
           displayBooks();
         });
       });
-    };
+    }
   }
 };
 
 addBook.addEventListener('click', () => {
-  let book = new Book(bookTitle.value, bookAuthor.value);
+  const book = new Book(bookTitle.value, bookAuthor.value);
   book.addBook();
   displayBooks();
 });
-
 
 window.onload = () => {
   displayBooks();

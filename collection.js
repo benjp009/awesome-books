@@ -14,6 +14,7 @@ class Book {
     listBooks.push(book);
     localStorage.setItem('BookList', JSON.stringify(listBooks));
   }
+  
   // eslint-disable-next-line class-methods-use-this
   removeBook(id) {
     let listBooks = JSON.parse(localStorage.getItem('BookList') || '[]');

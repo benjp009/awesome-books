@@ -9,9 +9,11 @@ By building this application, you will learn how to manage data using JavaScript
 You will also use a medium-fidelity wireframe to build the UI.
 
 
-### How to build the "Awesome books" website
+### How we built the "Awesome books" website
 
-We will start by building the core functionalities and ignoring how your website looks. At the very beginning our website will look similar to the UI below. Note that it is plain HTML with no styling, but it will allow you to add and remove books from the list!
+We start by building the core functionalities and ignoring how your website looks. 
+At the very beginning our website will look similar to the UI below. 
+Note that it is plain HTML with no styling, but it will allow you to add and remove books from the list!
 
 <p align="center">
   <img src="https://github.com/microverseinc/curriculum-javascript/blob/main/books/images/awesome_books_basic_ui.png" alt="Basic UI" width="300px" />

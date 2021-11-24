@@ -54,6 +54,12 @@ header nav a:nth-child(2) {
   padding: 0 10px;
 }
 
+.date {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+  padding-right: 10px;
+}
 
 .wrapper {
   display: flex;

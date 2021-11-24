@@ -41,10 +41,8 @@ const displayBooks = () => {
     for (let i = 0; i < listBooks.length; i += 1) {
       bookString += `
         <div class="book">
-          <p>${listBooks[i].title}</p>
-          <p>${listBooks[i].author}</p>
+          <p>"${listBooks[i].title}" by ${listBooks[i].author} </p>
           <button id="remove-book" type="button" data-atr="${i}">Remove</button>
-          <hr>
         </div>
       `;
     }

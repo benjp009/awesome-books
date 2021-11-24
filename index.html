@@ -7,16 +7,21 @@
     <title>Awesome Books</title>
   </head>
   <body>
-    <h1>Awesome Books</h1>
-    <div id="book-list" class="book-list">
+    <div class="wrapper">
+      <div>
+        <h1>Awesome Books</h1>
+        <div id="book-list" class="book-list">
+        </div>
+      </div>
+      <div class="add-book">
+        <form class="" action="index.html" method="post">
+          <input  class="book-title" type="text" value=""  placeholder="Title" required>
+          <input  class="book-author"  type="text" value=""  placeholder="Author" required>
+          <button id="add-book" type="button">Add</button>
+        </form>
+      </div>
     </div>
-    <div class="add-book">
-      <form class="" action="index.html" method="post">
-        <input  class="book-title" type="text" value=""  placeholder="Title" required>
-        <input  class="book-author"  type="text" value=""  placeholder="Author" required>
-        <button id="add-book" type="button">Add</button>
-      </form>
-    </div>
+    
     <script src="collection.js"></script>
   </body>
 </html>

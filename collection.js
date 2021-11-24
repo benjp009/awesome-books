@@ -74,20 +74,19 @@ list.addEventListener('click', () => {
   document.getElementById('list').style.display = 'block';
   document.getElementById('add-new').style.display = 'none';
   document.getElementById('contact').style.display = 'none';
-})
+});
 
 add.addEventListener('click', () => {
   document.getElementById('list').style.display = 'none';
   document.getElementById('add-new').style.display = 'block';
   document.getElementById('contact').style.display = 'none';
-
-})
+});
 
 contact.addEventListener('click', () => {
   document.getElementById('list').style.display = 'none';
   document.getElementById('add-new').style.display = 'none';
   document.getElementById('contact').style.display = 'block';
-})
+});
 
 window.onload = () => {
   document.getElementById('add-new').style.display = 'none';
@@ -96,5 +95,7 @@ window.onload = () => {
 };
 
 const date = document.getElementById('date');
+// eslint-disable-next-line no-undef
 const DateTime = luxon.DateTime.now();
-date.innerHTML = DateTime.toLocaleString(luxon.DateTime.DATETIME_MED)
+// eslint-disable-next-line no-undef
+date.innerHTML = DateTime.toLocaleString(luxon.DateTime.DATETIME_MED);

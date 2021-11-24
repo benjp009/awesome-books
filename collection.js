@@ -70,11 +70,10 @@ const list = document.querySelector('#list-button');
 const add = document.querySelector('#add-button');
 const contact = document.querySelector('#contact-button');
 
-list.addEventListener('click', (e) => {
+list.addEventListener('click', () => {
   document.getElementById('list').style.display = 'block';
   document.getElementById('add-new').style.display = 'none';
   document.getElementById('contact').style.display = 'none';
-  console.log(e)
 })
 
 add.addEventListener('click', () => {

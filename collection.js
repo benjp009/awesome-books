@@ -66,6 +66,36 @@ addBook.addEventListener('click', () => {
   displayBooks();
 });
 
+const list = document.querySelector('#list-button');
+const add = document.querySelector('#add-button');
+const contact = document.querySelector('#contact-button');
+const date = document.getElementById('date');
+const now =  luxon.DateTime;
+date.innerHTML = now
+
+list.addEventListener('click', (e) => {
+  document.getElementById('list').style.display = 'block';
+  document.getElementById('add-new').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+  console.log(e)
+})
+
+
+add.addEventListener('click', () => {
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('add-new').style.display = 'block';
+  document.getElementById('contact').style.display = 'none';
+  
+})
+
+contact.addEventListener('click', () => {
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('add-new').style.display = 'none';
+  document.getElementById('contact').style.display = 'block';
+})
+
+
+
 window.onload = () => {
   document.getElementById('add-new').style.display = 'none';
   document.getElementById('contact').style.display = 'none';

@@ -67,5 +67,7 @@ addBook.addEventListener('click', () => {
 });
 
 window.onload = () => {
+  document.getElementById('add-new').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
   displayBooks();
 };

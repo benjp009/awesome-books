@@ -13,7 +13,7 @@ button {
   font-size: 20px;
 }
 
-header, 
+header,
 footer {
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@ header nav a {
   font-weight: bold;
 }
 
-header nav a:hover, 
+header nav a:hover,
 header nav a:focus {
   color: #8099af;
 }

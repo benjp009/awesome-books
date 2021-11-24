@@ -7,22 +7,49 @@
     <title>Awesome Books</title>
   </head>
   <body>
+    <header>
+      <h1>Awesome Books</h1>
+      <nav>
+        <a href="#" id="list-button">List</a>
+        <a href="#" id="add-button">Add new</a>
+        <a href="#" id="contact-button">Contact</a>
+      </nav>
+    </header>
+    <div class="date">
+      <span id="date">
+      </span>
+    </div>
     <div class="wrapper">
-      <div class="book-info">
-        <h1 class="page-title">All awesome books</h1>
+      <div class="book-info" id="list">
+        <h2 class="page-title">All awesome books</h2>
         <div id="book-list" class="book-list">
         </div>
       </div>
-      <hr class="hr">
-      <div class="add-book">
-        <h1 class="page-title">Add a new book</h1>
+
+      <div class="add-book" id="add-new">
+        <h2 class="page-title">Add a new book</h2>
         <form class="add-book-form" action="index.html" method="post">
           <input  class="form-input book-title" type="text" value=""  placeholder="Title" required>
           <input  class="form-input book-author"  type="text" value=""  placeholder="Author" required>
           <button id="add-book" type="button" class="button-style">Add</button>
         </form>
       </div>
+
+      <div class="contact" id="contact">
+        <h2 class="page-title">Contact Informations</h2>
+        <p>Do you have any uestions or you just want to say 'Hello' ?</p>
+        <p>You can reach out to us!</p>
+        <ul>
+          <li>Our email: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Street name 22</li>
+        </ul>
+      </div>
     </div>
+    <footer>
+      <h3>Copyright 2022</h3>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.1.1/luxon.js"></script>
     <script src="collection.js"></script>
   </body>
 </html>

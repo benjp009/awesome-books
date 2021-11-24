@@ -66,6 +66,36 @@ addBook.addEventListener('click', () => {
   displayBooks();
 });
 
+const list = document.querySelector('#list-button');
+const add = document.querySelector('#add-button');
+const contact = document.querySelector('#contact-button');
+
+list.addEventListener('click', () => {
+  document.getElementById('list').style.display = 'block';
+  document.getElementById('add-new').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+});
+
+add.addEventListener('click', () => {
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('add-new').style.display = 'block';
+  document.getElementById('contact').style.display = 'none';
+});
+
+contact.addEventListener('click', () => {
+  document.getElementById('list').style.display = 'none';
+  document.getElementById('add-new').style.display = 'none';
+  document.getElementById('contact').style.display = 'block';
+});
+
 window.onload = () => {
+  document.getElementById('add-new').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
   displayBooks();
 };
+
+const date = document.getElementById('date');
+// eslint-disable-next-line no-undef
+const DateTime = luxon.DateTime.now();
+// eslint-disable-next-line no-undef
+date.innerHTML = DateTime.toLocaleString(luxon.DateTime.DATETIME_MED);
